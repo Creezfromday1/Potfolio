@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa fa-times-circle" style="font-size:24px" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa fa-bars" style="font-size:24px" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Geologist</p>
+            <h1>Hi, I'm <span>Christian</span><br>Adejoh</h1>
+        </div>
+    </div>
+</div>
+<div id="About">
+    <div class="container">
+        <div class="row">
+            <div class="About-col-1">
+                <img src="pics/Chr.jpg">
+            </div>
+            <div class="About-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Chris holds a Bachelor's degree in Geology from the prestigious Ahmadu
+                    Bello University, Zaria, Nigeria. He is currently pursing his masters degree at the University
+                    of Texas Permian Basin, USA.<br>
+                    His interest is focused on utilizing advanced geological techniques
+                    to promote  environmental sustainability in the oil and gas sector, particulary in carbon capture
+                    utilization and storage.<br>
+                    He is highly skilled in sequence and seismic stratigraphy, basin modelling, well logging, 
+                    core description and interpretation, petrophysical analysis, reservoir assessment, 
+                    machine learning and data analysis.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Petrophysics</span><br>Developing digital cores to match well logs</li>
+                            <li><span>Sequence Stratigraphy</span><br>Utilizing wheeler diagram and seismic reflectors to interprete sequence stratigraphic patterns</li>
+                            <li><span>Geology</span><br>Basin modelling and analysis</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 - Current</span><br>Geology Graduate Research Assistant at the University of Texas Permian Basin</li>
+                            <li><span>2021-2023</span><br>Research Assistant at the Center for Inland Basin Studies</li>
+                            <li><span>2016 </span><br>Internship at Nigerian National Petroleum Corporation Subsidiary</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span> Expected in 2025</span><br>Masters in Geology at the University of Texas Permian Basin</li>
+                            <li><span>2017</span><br>Bachelors in Geology at Ahmadu Bello University</li>
+                        </ul>
+                    </div>
+
+    </div>
+</div>
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="pics/project.jpg" alt="Digital core to well log tie">
+                <div class="layer">
+                    <h3>Digital core to well log tie</h3><br>
+                    <p>This graphic/digital core was created using inkscape software. The samples were that of the Leonard brother's
+                        core drilled from the Strawn formation (Pennsylvanian) in the Central Basin Platform. The digital core was 
+                        created to visualize the lithologies,structures,and parasequence stacking patterns of the formation. 
+                        Depth shift adjustments were made to match the digital core to the well log to interpret the regional 
+                        geology and depositional history of the basin.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="pics/Prooject.jpg" alt="Seismic reflectors and wheeler diagram interpretation">
+                <div class="layer">
+                    <h3>Wheeler diagram</h3><br>
+                    <p>The wheeler diagram created from the seismic reflector data was used to visualize the sequence stratigraphic 
+                     patterns to reconstruct past sea level changes.</p>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa fa-send-o" style="font-size:14px"></i>chrisadejoh@gmail.com</p>
+                <div class="social-icons">
+                <a href="https://www.linkedin.com/in/adejoh-christian"><button style="font-size:14px">Linkedin <i class="fa fa-linkedin-square"></i></button></a>
+                <a href="pics/Adejoh_Christian_Resume.pdf"><button style="font-size:14px">Download Resume</a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="button">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @Kevin. Made with <i class="fa fa-heart" style="font-size:14px"></i> by Easy Tutorials</p>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw5WTZTX7WV9yrrgucjSh8Q58_BpraGoRU636r9cvO-BVyY6qTzYXZlmk8rD6ZCGQqcmA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
